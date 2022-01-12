@@ -38,7 +38,7 @@ int main()
 
 	do
 	{
-		N = (left + right) / 2;
+		N = (left + right) / 2; //средина между двумя числами
 		cout << "Подскажите, пожалуйста:"
 			<< "\n1. Ваше число < " << N
 			<< "\n2. Ваше число == " << N
@@ -47,18 +47,18 @@ int main()
 		cout << "Вы выбрали вариант № ";
 		cin >> user_choice;
 
-		if (user_choice == less_than_N)
-			right = N - 1;
-		else if (user_choice == same_with_N)
-			break;
-		else if (user_choice == bigger_than_N)
-			left = N + 1;
+		iteration++; //подсчет кол-ва попыток угадать число
 
-		iteration++;
+		if (user_choice == less_than_N) //если пользователь выбрал меньше
+			right = N - 1;
+		else if (user_choice == same_with_N) //если пользователь выбрал равно
+			break;
+		else if (user_choice == bigger_than_N) //если пользователь выбрал больше
+			left = N + 1;
 
 	} while (number != N);
 
-	cout << "\nВаше число " << N << ", угадано с " << iteration + 1 << " попытки." << endl;
+	cout << "\nВаше число " << N << ", угадано с " << iteration << " попытки." << endl;
 
 	return 0;
 }
