@@ -39,11 +39,12 @@ int main()
 	do
 	{
 		N = (left + right) / 2;
-
-		cout << "\n1. Ваше число < " << N
+		cout << "Подскажите, пожалуйста:"
+			<< "\n1. Ваше число < " << N
 			<< "\n2. Ваше число == " << N
 			<< "\n3. Ваше число > " << N << endl;
 		int user_choice{ 0 };
+		cout << "Вы выбрали вариант № ";
 		cin >> user_choice;
 
 		if (user_choice == less_than_N)
@@ -57,7 +58,7 @@ int main()
 
 	} while (number != N);
 
-	cout << "\nВаше число " << N << " угадано с " << iteration + 1 << " попытки." << endl;
+	cout << "\nВаше число " << N << ", угадано с " << iteration + 1 << " попытки." << endl;
 
 	return 0;
 }
