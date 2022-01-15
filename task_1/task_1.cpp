@@ -14,17 +14,18 @@ int main()
 {
 	setlocale(LC_ALL, ""); // работает только с потоком вывода
 
-	int number{ 0 }, new_number{ 0 };
+	int number{ 0 }, new_number{ 0 }, rests{ 0 };
 
 	cout << "Введите целое число любой разрядности: " << endl;
 	cin >> number;
 
 	while (number > 0)
 	{
-		new_number = number % 10;
+		rests = number % 10;
+		new_number = new_number * 10 + rests;
 		number /= 10;
-		cout << new_number;
 	}
+	cout << new_number << endl;
 
 	return 0;
 }
